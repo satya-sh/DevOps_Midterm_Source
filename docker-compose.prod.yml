@@ -28,6 +28,6 @@ services:
       - backend
     volumes:
       - /home/ec2-user/certbotParent/.well-known/acme-challenge:/usr/share/nginx/html/.well-known/acme-challenge
-      - /etc/letsencrypt/live:/etc/letsencrypt/live:ro
-      - /etc/letsencrypt/archive:/etc/letsencrypt/archive:ro
-      - /etc/letsencrypt/keys:/etc/letsencrypt/keys:ro
+      - /etc/letsencrypt/live:/etc/letsencrypt/live:ro,Z
+      - /etc/letsencrypt/archive:/etc/letsencrypt/archive:ro,Z
+      - /etc/letsencrypt/keys:/etc/letsencrypt/keys:ro,Z

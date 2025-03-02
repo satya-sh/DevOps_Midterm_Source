@@ -23,5 +23,8 @@ services:
     # This will serve everything on host port 80
     ports:
       - "80:80"
+      - "443:443"  # We’ll listen on 443 inside the container
     depends_on:
       - backend
+    volumes:
+      - /home/ec2-user/certbot-webroot:/usr/share/nginx/html/.well-known/acme-challenge

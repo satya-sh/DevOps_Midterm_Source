@@ -27,4 +27,4 @@ services:
     depends_on:
       - backend
     volumes:
-      - /home/ec2-user/certbot-webroot:/usr/share/nginx/html
+      - /home/ec2-user/certbot-webroot:/usr/share/nginx/html/.well-known/acme-challenge

@@ -16,7 +16,9 @@ services:
     # The backend is accessible via "backend:8800" inside Docker
 
   nginx:
-    build: ./nginx
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
     container_name: nginx
     # This will serve everything on host port 80
     ports:

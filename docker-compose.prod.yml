@@ -3,16 +3,23 @@ version: "3.9"
 services:
   backend:
     build: ./backend
-    ports:
-      - "8800:8800"
+    container_name: backend
+    # Only expose port 8800 internally (no public port mapping)
+    expose:
+      - "8800"
     environment:
       - DB_HOST=${DB_HOST}
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_NAME=${DB_NAME}
       - DB_PORT=${DB_PORT}
+    # The backend is accessible via "backend:8800" inside Docker
 
-  frontend:
-    build: ./frontend
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    # This will serve everything on host port 80
     ports:
-      - "80:5173"
+      - "80:80"
+    depends_on:
+      - backend

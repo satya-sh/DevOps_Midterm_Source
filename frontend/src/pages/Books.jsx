@@ -40,10 +40,10 @@ const handleDelete = async (id)=>{
       <p><strong>{book.description}</strong></p>
      <span>${book.price}</span>
      <button className="delete" onClick={()=>handleDelete(book.id)}>
-        Delete
+        DELETE
      </button>
      <button className="update">
-       <Link to={`/update/${book.id}`}>Update</Link>
+       <Link to={`/update/${book.id}`}>UPDATE</Link>
      </button>
     </div>
     ))}
